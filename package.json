@@ -1,8 +1,8 @@
 {
-    "name": "autoloader",
-    "version": "1.0.0",
-    "description": "my own autoload resolve nodejs dependencies",
-    "main": "kit.js",
+    "name": "eager-loader",
+    "version": "0.0.1",
+    "description": "my own autoload resolve nodejs dependencies with specifiy config rules",
+    "main": "lib",
     "scripts": {
         "test": "nyc ava --tap | tap-nyan",
         "test:watch": "nyc ava --watch",
@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Matrixbirds/autoloader.git"
+        "url": "git+https://github.com/Matrixbirds/eager-loader.git"
     },
     "keywords": [
         "resolve",
@@ -19,9 +19,9 @@
     "author": "matrixbirds",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Matrixbirds/autoloader/issues"
+        "url": "https://github.com/Matrixbirds/eager-loader/issues"
     },
-    "homepage": "https://github.com/Matrixbirds/autoloader#readme",
+    "homepage": "https://github.com/Matrixbirds/eager-loader#readme",
     "dependencies": {
         "ramda": "^0.25.0"
     },
@@ -34,7 +34,7 @@
     "ava": {
         "files": [
             "tests/*.tests.js",
-            "!**/models/*.js"
+            "!**/models/**/*.js"
         ],
         "source": [
             "lib/*.{js}"
@@ -46,6 +46,6 @@
         "failFast": true,
         "failWithoutAssertions": false,
         "tap": false,
-        "powerAssert": true
+        "powerAssert": false
     }
 }
