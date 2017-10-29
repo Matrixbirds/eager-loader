@@ -1,29 +1,51 @@
 {
-  "name": "autoloader",
-  "version": "1.0.0",
-  "description": "my own autoload resolve nodejs dependencies",
-  "main": "kit.js",
-  "scripts": {
-    "test": "ava",
-    "lint": "eslint ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Matrixbirds/autoloader.git"
-  },
-  "keywords": [
-    "resolve",
-    "dependencies"
-  ],
-  "author": "matrixbirds",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Matrixbirds/autoloader/issues"
-  },
-  "homepage": "https://github.com/Matrixbirds/autoloader#readme",
-  "devDependencies": {
-    "ava": "^0.23.0",
-    "eslint": "^4.10.0",
-    "ramda": "^0.25.0"
-  }
+    "name": "autoloader",
+    "version": "1.0.0",
+    "description": "my own autoload resolve nodejs dependencies",
+    "main": "kit.js",
+    "scripts": {
+        "test": "nyc ava --tap | tap-nyan",
+        "test:watch": "nyc ava --watch",
+        "lint": "eslint ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Matrixbirds/autoloader.git"
+    },
+    "keywords": [
+        "resolve",
+        "dependencies"
+    ],
+    "author": "matrixbirds",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Matrixbirds/autoloader/issues"
+    },
+    "homepage": "https://github.com/Matrixbirds/autoloader#readme",
+    "dependencies": {
+        "ramda": "^0.25.0"
+    },
+    "devDependencies": {
+        "ava": "^0.23.0",
+        "eslint": "^4.10.0",
+        "nyc": "^11.2.1",
+        "tap-nyan": "^1.1.0"
+    },
+    "ava": {
+        "files": [
+            "tests/*.tests.js",
+            "!**/models/*.js"
+        ],
+        "source": [
+            "lib/*.{js}"
+        ],
+        "match": [
+            "*"
+        ],
+        "concurrency": 5,
+        "failFast": true,
+        "failWithoutAssertions": false,
+        "tap": false,
+        "powerAssert": true
+    }
 }
