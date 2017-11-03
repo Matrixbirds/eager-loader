@@ -1,6 +1,6 @@
 {
     "name": "eager-loader",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "my own autoload resolve nodejs dependencies with specifiy config rules",
     "main": "lib",
     "scripts": {
