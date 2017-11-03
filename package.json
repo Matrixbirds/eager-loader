@@ -4,8 +4,8 @@
     "description": "my own autoload resolve nodejs dependencies with specifiy config rules",
     "main": "lib",
     "scripts": {
-        "test": "nyc ava --tap | tap-nyan",
-        "test:watch": "nyc ava --watch",
+        "test": "ava --tap | tap-nyan",
+        "test:watch": "ava --watch",
         "lint": "eslint ."
     },
     "repository": {
